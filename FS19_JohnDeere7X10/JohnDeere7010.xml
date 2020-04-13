@@ -182,8 +182,8 @@
 	<lights>
 	    <sharedLight linkNode="frontLightRectangle_02_Left"   node="0" lightTypes="0 3" filename="$data/shared/assets/lights/lizard/frontLightRectangle_02_left.xml" />
         <sharedLight linkNode="frontLightRectangle_02_Right"  node="0" lightTypes="0 3" filename="$data/shared/assets/lights/lizard/frontLightRectangle_02_right.xml" />
-		<sharedLight linkNode="workingLightSquare_04_left"    node="0" lightTypes="1"   filename="$data/shared/assets/lights/lizard/workingLightSquare_04.xml" />
-        <sharedLight linkNode="workingLightSquare_04_right"   node="0" lightTypes="1"   filename="$data/shared/assets/lights/lizard/workingLightSquare_04.xml" />
+		<sharedLight linkNode="workingLightSquare_04_left"    node="0" lightTypes="2"   filename="$data/shared/assets/lights/lizard/workingLightSquare_04.xml" />
+        <sharedLight linkNode="workingLightSquare_04_right"   node="0" lightTypes="2"   filename="$data/shared/assets/lights/lizard/workingLightSquare_04.xml" />
 		<sharedLight linkNode="rearLightOvalLEDOrange_01_left"   node="0" lightTypes="0"   filename="$data/shared/assets/lights/lizard/rearLightOvalLEDOrange_01_left.xml" />
         <sharedLight linkNode="rearLightOvalLEDOrange_01_right"  node="0" lightTypes="0"   filename="$data/shared/assets/lights/lizard/rearLightOvalLEDOrange_01_right.xml" />
         
@@ -360,8 +360,9 @@
 		
 		<motorConfigurations>
             <motorConfiguration name="7610" hp="140" price="0">
-                <motor torqueScale="0.601" minRpm="850" maxRpm="2200" maxForwardSpeed="48" maxBackwardSpeed="22" brakeForce="6" lowBrakeForceScale="0.22" lowBrakeForceSpeedLimit="0.004">
-                    <torque normRpm="0.45" torque="0.9"/>
+                <!--<motor torqueScale="0.601" minRpm="850" maxRpm="2200" maxForwardSpeed="48" maxBackwardSpeed="22" brakeForce="6" lowBrakeForceScale="0.22" lowBrakeForceSpeedLimit="0.004">-->
+                <motor torqueScale="0.668" minRpm="850" maxRpm="2200" maxForwardSpeed="52" maxBackwardSpeed="22" brakeForce="6" lowBrakeForceScale="0.22" lowBrakeForceSpeedLimit="0.004">
+					<torque normRpm="0.45" torque="0.9"/>
                     <torque normRpm="0.5" torque="0.97"/>
                     <torque normRpm="0.59" torque="1"/>
                     <torque normRpm="0.72" torque="1"/>
@@ -374,13 +375,15 @@
                 <objectChange node="7810_decal" visibilityActive="false"/>
             </motorConfiguration>
             <motorConfiguration name="7710" hp="155" maxForwardSpeed="50" price="5000">
-                <motor torqueScale="0.668"/>
+                <!--<motor torqueScale="0.668"/>-->
+				<motor torqueScale="0.756"/>
                 <objectChange node="7610_decal" visibilityActive="false"/>
                 <objectChange node="7710_decal" visibilityActive="true"/>
                 <objectChange node="7810_decal" visibilityActive="false"/>
             </motorConfiguration>
             <motorConfiguration name="7810" hp="175" maxForwardSpeed="53" price="10000">
-                <motor torqueScale="0.756"/>
+                <!--<motor torqueScale="0.756"/>-->
+				<motor torqueScale="0.865"/>
                 <objectChange node="7610_decal" visibilityActive="false"/>
                 <objectChange node="7710_decal" visibilityActive="false"/>
                 <objectChange node="7810_decal" visibilityActive="true"/>
@@ -527,7 +530,58 @@
             <part node="0>0|12|3|7|0|4|6|39" startTime="0.975" endTime="0.976" visibility="true" />			
             <part node="0>0|12|3|7|0|4|6|39" startTime="0.999" endTime="1" visibility="true" />
         </animation>
+		<!-- doors -->
+		<animation name="doorLeftMovement">
+            <part node="doorLeft" startTime="0" endTime="2" startRot="1.802 0.395 12.675" endRot="1.802 60 12.675" />
+        </animation>
+		<!-- backWindow -->
+		<animation name="windowBackMovement">
+			<part node="windowBack" startTime="0" endTime="2" startRot="0 0 0" endRot="50 0 0" />
+        </animation>
     </animations>
+	
+	<simpleIC outsideInteractionTrigger="sIC_playerTrigger" >
+		<animation animationName="doorLeftMovement" animationSpeed="1" sharedAnimation="false" soundVolumeIncreasePercentage="10.0" >
+			<outsideTrigger triggerPoint="sIC_doorLeftOutside" triggerPointSize="0.04" />
+			<insideTrigger triggerPoint="sIC_doorLeftInside" triggerPointSize="0.04" />
+		</animation>
+		<animation animationName="windowBackMovement" animationSpeed="1.5" sharedAnimation="false" soundVolumeIncreasePercentage="10.0" >
+			<insideTrigger triggerPoint="sIC_windowBackInside" triggerPointSize="0.04" />
+		</animation>
+		
+		<!-- Available functions in simpleIC_LSF -->
+		<!--
+			toogleBackHydraulic
+			upperBackHydraulic
+			lowerBackHydraulic
+			activateBack
+			toogleFrontHydraulic
+			upperFrontHydraulic
+			lowerFrontHydraulic
+		-->
+		<animation animationName="lowerBackHydraulic">
+			<outsideTrigger triggerPoint="sIC_rearAttacherDown" triggerPointSize="0.01" />
+		</animation>
+		<animation animationName="upperBackHydraulic">
+			<outsideTrigger triggerPoint="sIC_rearAttacherUp" triggerPointSize="0.01" />
+		</animation>
+		<!--
+		<animation animationName="activateBack">
+			<outsideTrigger triggerPoint="simpleIC_activateBackPTO" triggerPointSize="0.01" />
+		</animation>
+		<animation animationName="lowerFrontHydraulic">
+			<outsideTrigger triggerPoint="simpleIC_lowerFrontHydraulic" triggerPointSize="0.01" />
+		</animation>
+		<animation animationName="upperFrontHydraulic">
+			<outsideTrigger triggerPoint="simpleIC_upperFrontHydraulic" triggerPointSize="0.01" />
+		</animation>
+		-->
+	    <cylinderAnimations>
+		    <cylinder node1="rearWindowLeftCylinder" node2="rearWindowLeftCylinderInside" />
+			<cylinder node1="rearWindowRightCylinder" node2="rearWindowRightCylinderInside" />
+	    </cylinderAnimations>
+		
+	</simpleIC>
 	
     <cylindered>
 		<movingTools>
@@ -799,5 +853,21 @@
         <i3dMapping id="frontLeftSteeringHydraulicPunch" node="1>1|0|0|0" />
         <i3dMapping id="frontRightSteeringHydraulic" node="1>1|1|0" />
         <i3dMapping id="frontRightSteeringHydraulicPunch" node="1>1|1|0|0" />
+		<i3dMapping id="windowBack" node="0>0|12|3|0" />
+		<i3dMapping id="doorLeft" node="0>0|12|3|2" />
+		
+		
+		<!-- simpleIC Mappings -->
+		<i3dMapping id="sIC_playerTrigger" node="0>0|12|12" />
+		<i3dMapping id="sIC_windowBackInside" node="0>0|12|3|0|4" />
+		<i3dMapping id="sIC_doorLeftInside" node="0>0|12|3|2|2" />
+		<i3dMapping id="sIC_doorLeftOutside" node="0>0|12|3|2|1" />
+		<i3dMapping id="sIC_rearAttacherUp" node="0>0|12|13" />
+		<i3dMapping id="sIC_rearAttacherDown" node="0>0|12|14" />
+		<i3dMapping id="rearWindowLeftCylinder" 	node="0>0|12|3|0|3|0|0" />
+		<i3dMapping id="rearWindowLeftCylinderInside" 	node="0>0|12|3|8|0" />
+		<i3dMapping id="rearWindowRightCylinder" 	node="0>0|12|3|0|3|1|0" />
+		<i3dMapping id="rearWindowRightCylinderInside" 	node="0>0|12|3|9|0" />
+		
     </i3dMappings>
 </vehicle>
