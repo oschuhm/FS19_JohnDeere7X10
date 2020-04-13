@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<wheel>
+    <default>
+        <physics radius="0.986" width="0.71" mass="0.319" tireType="mud" frictionScale="1.60" maxLongStiffness="8" maxLatStiffness="100" maxLatStiffnessLoad="2" />
+        <tire filename="$data/shared/wheels/michelin/machXbib/R38_machXbib.i3d" nodeLeft="2|0" nodeRight="2|0" maxDeformation="0.101" isCareWheel="false" tireTrackAtlasIndex="0" />
+        <!-- <outerRim filename="$data/shared/wheels/rims/rim001.i3d" node="1|0" widthAndDiam="23 38" /> -->
+        <innerRim filename="wheels/rims.i3d" nodeLeft="0|4" nodeRight="0|5" scale="0.82 0.9 0.9" />
+    </default>
+</wheel>
