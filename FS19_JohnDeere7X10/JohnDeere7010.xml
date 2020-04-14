@@ -857,12 +857,14 @@
 		<i3dMapping id="doorLeft" node="0>0|12|3|2" />
 		
 		<!-- LS19 Player Zeugs -->
-		<i3dMapping id="gasPedal" node="0>0|9|3|0" />
-        <i3dMapping id="playerRightFootTargetGasRef" node="0>0|9|3|0|0" />
-        <i3dMapping id="playerRightFootTargetGas" node="0>0|9|3|1" />
+		<!-- Gerade kein Bock ... kommt später
+		<i3dMapping id="gasPedal" node="0>0|12|0|8" />
+        <i3dMapping id="playerRightFootTargetGasRef" node="0>0|12|0|9" />
+        <i3dMapping id="playerRightFootTargetGas" node="0>0|12|0|10" />
         <i3dMapping id="brakePedal" node="0>0|9|3|2" />
-        <i3dMapping id="playerRightFootTargetBrake" node="0>0|9|3|2|0" />
-	
+        <i3dMapping id="playerRightFootTargetBrake" node="0>0|12|0|11" />
+		-->
+		
 		<!-- simpleIC Mappings -->
 		<i3dMapping id="sIC_playerTrigger" node="0>0|12|12" />
 		<i3dMapping id="sIC_windowBackInside" node="0>0|12|3|0|4" />
