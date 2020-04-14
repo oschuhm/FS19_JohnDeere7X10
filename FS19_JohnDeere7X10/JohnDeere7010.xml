@@ -361,7 +361,7 @@
 		<motorConfigurations>
             <motorConfiguration name="7610" hp="140" price="0">
                 <!--<motor torqueScale="0.601" minRpm="850" maxRpm="2200" maxForwardSpeed="48" maxBackwardSpeed="22" brakeForce="6" lowBrakeForceScale="0.22" lowBrakeForceSpeedLimit="0.004">-->
-                <motor torqueScale="0.668" minRpm="850" maxRpm="2200" maxForwardSpeed="52" maxBackwardSpeed="22" brakeForce="6" lowBrakeForceScale="0.22" lowBrakeForceSpeedLimit="0.004">
+                <motor torqueScale="0.756" minRpm="850" maxRpm="2200" maxForwardSpeed="52" maxBackwardSpeed="22" brakeForce="6" lowBrakeForceScale="0.22" lowBrakeForceSpeedLimit="0.004">
 					<torque normRpm="0.45" torque="0.9"/>
                     <torque normRpm="0.5" torque="0.97"/>
                     <torque normRpm="0.59" torque="1"/>
@@ -376,14 +376,14 @@
             </motorConfiguration>
             <motorConfiguration name="7710" hp="155" maxForwardSpeed="50" price="5000">
                 <!--<motor torqueScale="0.668"/>-->
-				<motor torqueScale="0.756"/>
+				<motor torqueScale="0.865"/>
                 <objectChange node="7610_decal" visibilityActive="false"/>
                 <objectChange node="7710_decal" visibilityActive="true"/>
                 <objectChange node="7810_decal" visibilityActive="false"/>
             </motorConfiguration>
             <motorConfiguration name="7810" hp="175" maxForwardSpeed="53" price="10000">
                 <!--<motor torqueScale="0.756"/>-->
-				<motor torqueScale="0.865"/>
+				<motor torqueScale="0.970"/>
                 <objectChange node="7610_decal" visibilityActive="false"/>
                 <objectChange node="7710_decal" visibilityActive="false"/>
                 <objectChange node="7810_decal" visibilityActive="true"/>
@@ -856,7 +856,13 @@
 		<i3dMapping id="windowBack" node="0>0|12|3|0" />
 		<i3dMapping id="doorLeft" node="0>0|12|3|2" />
 		
-		
+		<!-- LS19 Player Zeugs -->
+		<i3dMapping id="gasPedal" node="0>0|9|3|0" />
+        <i3dMapping id="playerRightFootTargetGasRef" node="0>0|9|3|0|0" />
+        <i3dMapping id="playerRightFootTargetGas" node="0>0|9|3|1" />
+        <i3dMapping id="brakePedal" node="0>0|9|3|2" />
+        <i3dMapping id="playerRightFootTargetBrake" node="0>0|9|3|2|0" />
+	
 		<!-- simpleIC Mappings -->
 		<i3dMapping id="sIC_playerTrigger" node="0>0|12|12" />
 		<i3dMapping id="sIC_windowBackInside" node="0>0|12|3|0|4" />
