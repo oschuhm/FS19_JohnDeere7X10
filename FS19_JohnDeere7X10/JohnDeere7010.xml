@@ -536,7 +536,7 @@
         </animation>
 		<!-- backWindow -->
 		<animation name="windowBackMovement">
-			<part node="windowBack" startTime="0" endTime="2" startRot="0 0 0" endRot="50 0 0" />
+			<part node="windowBack" startTime="0" endTime="2" startRot="0 0 0" endRot="35 0 0" />
         </animation>
     </animations>
 	
