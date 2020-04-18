@@ -277,14 +277,16 @@
 			<objectChange node="bottomArmLeft" rotationActive="0 0 0" rotationInactive="-80 0 0"/>
         </attacherJoint>
         <attacherJoint node="trailerAttacherJointBack" jointType="trailer" lowerRotLimit="10 50 50" upperRotRotationOffset="0" allowsJointLimitMovement="false" comboTime="1">
-            <distanceToGround lower="0.59" upper="1.20" />
-            <!-- <transNode node="trailerAttacherNode" minY="0.58" maxY="1.175" /> -->
+            <!-- <distanceToGround lower="0.59" upper="1.20" /> -->
+			<distanceToGround lower="0.59" upper="1.20" />
+            <transNode node="trailerAttacherNode" minY="0.54" maxY="1.175" />
             <schema position="1 0" rotation="0" invertX="false" />
             <objectChange node="trailerLowNode" visibilityActive="false"  visibilityInactive="true" />
             <objectChange node="attacherJointBackArmBottom" rotationActive="25 0 0"  rotationInactive="0 0 0" />
         </attacherJoint>
         <attacherJoint node="trailerAttacherJointBackLow" jointType="trailerLow" lowerRotLimit="10 50 50" lowerTransLimit="0 0 0" upperRotRotationOffset="0" allowsJointLimitMovement="false" comboTime="1">
-            <distanceToGround lower="0.59" upper="0.71" />
+            <!-- <distanceToGround lower="0.59" upper="0.71" /> -->
+			<distanceToGround lower="0.59" upper="0.71" />
             <!-- <transNode node="trailerLowNode" minY="0.58" maxY="0.70" /> -->
             <schema position="1 0" rotation="0" invertX="false" />
             <objectChange node="attacherJointBackArmBottom" rotationActive="30 0 0"  rotationInactive="0 0 0" />
@@ -536,7 +538,7 @@
         </animation>
 		<!-- backWindow -->
 		<animation name="windowBackMovement">
-			<part node="windowBack" startTime="0" endTime="2" startRot="0 0 0" endRot="50 0 0" />
+			<part node="windowBack" startTime="0" endTime="2" startRot="0 0 0" endRot="38 0 0" />
         </animation>
     </animations>
 	
