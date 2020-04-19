@@ -277,7 +277,9 @@
             <schema position="1 0" rotation="0" invertX="true" />
             <objectChange node="bottomArmRight" rotationActive="0 0 0" rotationInactive="-80 0 0"/>
 			<objectChange node="bottomArmLeft" rotationActive="0 0 0" rotationInactive="-80 0 0"/>
-        </attacherJoint>
+			<!-- Kugel anzeigen -->
+			<objectChange node="0>0|3|0|4|1" visibilityActive="true" visibilityInactive="false"/>
+		</attacherJoint>
         <attacherJoint node="trailerAttacherJointBack" jointType="trailer" lowerRotLimit="10 50 50" upperRotRotationOffset="0" allowsJointLimitMovement="false" comboTime="1">
             <!-- <distanceToGround lower="0.59" upper="1.20" /> -->
 			<distanceToGround lower="0.59" upper="1.20" />
