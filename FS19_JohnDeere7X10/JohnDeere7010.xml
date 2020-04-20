@@ -41,6 +41,29 @@
         </schemaOverlay>
     </base>
 	
+	<variableTirePressure configName="wheel" activeConfigs="configuration_varioGrip"> 
+		<pressures>
+			<min>0.8</min>
+			<max>2.6</max>
+		</pressures>
+		
+		<speeds>
+			<empty>0.55</empty>
+			<fill>0.8</fill>
+		</speeds>
+		
+		<emptySound file="sounds/airdown.wav" />
+		<fillSound file="sounds/compressor.wav" />
+		<stopSound file="$data/sounds/vehicles/compressor/compressor_stop.wav" />
+		
+		<!--
+		<dashboards>
+			<dashboard displayType="NUMBER" valueType="currentTirePressureFront" numbers="numbersTirePressureFront" numberColor="0 0 0 0.6" precision="2" groups="MOTOR_ACTIVE"/>
+			<dashboard displayType="NUMBER" valueType="currentTirePressureBack" numbers="numbersTirePressureBack" numberColor="0 0 0 0.6" precision="2" groups="MOTOR_ACTIVE"/>
+		</dashboards>
+		-->
+    </variableTirePressure>
+	
     <wheels>
         <wheelConfigurations>
 			<wheelConfiguration name="$l10n_configuration_valueDefault" price="0" brand="TRELLEBORG">
@@ -77,6 +100,27 @@
                         <physics rotSpeed="0" restLoad="2.7" repr="wheelBackLeft"  forcePointRatio="0.5" initialCompression="20" suspTravel="0.33" spring="34" damper="60" />
                     </wheel>
                     <wheel filename="wheels/710_70R42.xml"  isLeft="false" hasTireTracks="true" hasParticles="true" >
+                        <physics rotSpeed="0" restLoad="2.7" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.33" spring="34" damper="60" />
+                    </wheel>
+                </wheels>
+                <objectChange node="wideMudGuard" visibilityActive="true" />
+                <objectChange node="mudGuard" visibilityActive="false" />
+            </wheelConfiguration>
+			<!-- Reifendruck System -->
+			<wheelConfiguration name="$l10n_configuration_varioGrip" price="1800" brand="TRELLEBORG">
+                <wheels autoRotateBackSpeed="2.0">
+                    <wheel filename="wheels/600_70R28_VG.xml"  configId="varioGripFront" isLeft="true" hasTireTracks="true" hasParticles="true" >
+                        <physics rotSpeed="1" restLoad="2.8" repr="axisFrontLeft"  driveNode="wheelFrontLeft"  forcePointRatio="0.5" initialCompression="25" suspTravel="0.27" spring="38" damper="60" />
+                        <fender node="fenderFrontLeft" rotMax="28" />
+                    </wheel>
+                    <wheel filename="wheels/600_70R28_VG.xml" configId="varioGripFront" isLeft="false" hasTireTracks="true" hasParticles="true" >
+                        <physics rotSpeed="1" restLoad="2.8" repr="axisFrontRight" driveNode="wheelFrontRight" forcePointRatio="0.5" initialCompression="25" suspTravel="0.27" spring="38" damper="60" />
+                        <fender node="fenderFrontRight" rotMin="-28.5" />
+                    </wheel>
+                    <wheel filename="wheels/710_70R42_VG.xml" configId="varioGripBack" isLeft="true" hasTireTracks="true" hasParticles="true" >
+                        <physics rotSpeed="0" restLoad="2.7" repr="wheelBackLeft"  forcePointRatio="0.5" initialCompression="20" suspTravel="0.33" spring="34" damper="60" />
+                    </wheel>
+                    <wheel filename="wheels/710_70R42_VG.xml" configId="varioGripBack" isLeft="false" hasTireTracks="true" hasParticles="true" >
                         <physics rotSpeed="0" restLoad="2.7" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.33" spring="34" damper="60" />
                     </wheel>
                 </wheels>

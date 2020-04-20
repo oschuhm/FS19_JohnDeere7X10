@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="varioGrip" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+  <Asset>
+    <Export program="GIANTS Editor 64bit" version="8.2.0"/>
+  </Asset>
+
+  <Files>
+    <File fileId="3" filename="$data/shaders/vehicleShader.xml"/>
+    <File fileId="2" filename="$data/shared/default_normal.dds"/>
+  </Files>
+
+
+  <Materials>
+    <Material name="vario_mat" materialId="4" diffuseColor="0.294118 0.294118 0.294118 1" customShaderId="3" customShaderVariation="colorMask">
+      <Normalmap fileId="2"/>
+      <CustomParameter name="RDT" value="1 1 0 0"/>
+      <CustomParameter name="dirtColor" value="0.2 0.14 0.08 0"/>
+      <CustomParameter name="colorMat0" value="0.8 0.55 0.05 0"/>
+      <CustomParameter name="colorMat1" value="1 0.1 0.1 0"/>
+      <CustomParameter name="colorMat2" value="0.1 1 0.1 0"/>
+      <CustomParameter name="colorMat3" value="0.1 0.1 1 1"/>
+      <CustomParameter name="colorMat4" value="1 1 0.1 1"/>
+      <CustomParameter name="colorMat5" value="0.05 0.05 0.05 1"/>
+      <CustomParameter name="colorMat6" value="1 0.1 1 1"/>
+      <CustomParameter name="colorMat7" value="0.1 1 1 1"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="varioGrip.i3d.shapes">
+  </Shapes>
+
+
+  <Dynamics>
+  </Dynamics>
+
+  <Scene>
+    <TransformGroup name="vg_left" nodeId="10">
+      <Shape shapeId="1" name="Left" clipDistance="300" nodeId="11" materialIds="4" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="2" name="left1" clipDistance="300" nodeId="12" materialIds="4" castsShadows="true" receiveShadows="true"/>
+    </TransformGroup>
+    <TransformGroup name="vg_right" nodeId="13">
+      <Shape shapeId="3" name="right" clipDistance="300" nodeId="14" materialIds="4" castsShadows="true" receiveShadows="true"/>
+      <Shape shapeId="4" name="right2" clipDistance="300" nodeId="15" materialIds="4" castsShadows="true" receiveShadows="true"/>
+    </TransformGroup>
+  </Scene>
+
+</i3D>
