@@ -15,4 +15,47 @@
         <storeItem rootNode="vehicle" xmlFilename="JohnDeere7010.xml"/>
     </storeItems>
 	
+	<specializations>
+        <specialization name="tirePressure" className="TirePressure" filename="specializations/TirePressure.lua" />
+    </specializations>
+	
+	<vehicleTypes>
+		<type name="JD7x10" parent="tractor" filename="$dataS/scripts/vehicles/Vehicle.lua">
+			<specialization name="tirePressure" />
+		</type>
+	</vehicleTypes>
+	
+	<actions>
+        <action name="TP_AXIS_PRESSURE" axisType="FULL"/>
+        <action name="TP_TOGGLE_PRESSURE" axisType="HALF"/>
+    </actions>
+	
+	<inputBinding>
+		<actionBinding action="TP_TOGGLE_PRESSURE">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_p"/>
+		</actionBinding>
+		<actionBinding action="TP_AXIS_PRESSURE">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_pageup" axisComponent="+"/>
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_pagedown" axisComponent="-"/>
+		</actionBinding>
+    </inputBinding>
+	
+	<l10n>
+        <text name="information_tirePressure">
+            <en>Tire pressure [target: %1.2f bar] [current: %1.2f bar]</en>
+        </text>
+        <text name="action_toggleTirePressure">
+            <en>Toggle pressure</en>
+        </text>
+        <text name="input_TP_TOGGLE_PRESSURE">
+            <en>Update pressure</en>
+        </text>
+        <text name="input_TP_AXIS_PRESSURE_1">
+            <en>Inflate</en>
+        </text>
+		<text name="input_TP_AXIS_PRESSURE_2">
+            <en>Deflate</en>
+        </text>
+	</l10n>
+	
 </modDesc>

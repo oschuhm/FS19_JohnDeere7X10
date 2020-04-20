@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<vehicle type="tractor">
+<vehicle type="JD7x10">
     <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
 	
     <storeData>
@@ -40,6 +40,20 @@
             <turnedOnSelected name="DEFAULT_VEHICLE_SELECTED_ON"/>
         </schemaOverlay>
     </base>
+	
+	<!-- If you only want to active it for a specific configuration/configurations -->
+	<!-- <tirePressure min="60" configurationName="wheel" configurationIndices="2 8 9"> -->
+	<tirePressure>
+		<sounds>
+            <air template="DEFAULT_SOWING_AIR_BLOWER">
+			<volume indoor="0.4" outdoor="0.85" />
+				<pitch indoor="1.0" outdoor="1.0" >
+					<modifier type="VALVE_LOAD" value="0.00" modifiedValue="0.80" />
+					<modifier type="VALVE_LOAD" value="1.00" modifiedValue="1.20" />
+				</pitch>
+			</air>
+		</sounds>
+	</tirePressure>
 	
     <wheels>
         <wheelConfigurations>
