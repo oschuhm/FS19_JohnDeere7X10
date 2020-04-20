@@ -43,18 +43,23 @@
 	<l10n>
         <text name="information_tirePressure">
             <en>Tire pressure [target: %1.2f bar] [current: %1.2f bar]</en>
+			<de>Reifendruck [Ziel: %1.2f bar] [Aktuell: %1.2f bar]</de>
         </text>
         <text name="action_toggleTirePressure">
             <en>Toggle pressure</en>
+			<de><![CDATA[Luft ablassen / aufblasen]]></de>
         </text>
         <text name="input_TP_TOGGLE_PRESSURE">
             <en>Update pressure</en>
+			<de>Reifendruck einstellen</de>
         </text>
         <text name="input_TP_AXIS_PRESSURE_1">
             <en>Inflate</en>
+			<de>Aufpumpen</de>
         </text>
 		<text name="input_TP_AXIS_PRESSURE_2">
             <en>Deflate</en>
+			<de>Ablassen</de>
         </text>
 	</l10n>
 	
