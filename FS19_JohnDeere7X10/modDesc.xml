@@ -18,11 +18,6 @@
 	
 	<specializations>
 	    <specialization name="addConfig"               className="AddConfig"               filename="specializations/AddConfig.lua"/>
-		<specialization name="terminalBoot"            className="TerminalBoot"            filename="specializations/TerminalBoot.lua"/>
-		<specialization name="interactiveControl"      className="InteractiveControl"      filename="specializations/InteractiveControl.lua" />
-        <specialization name="interactiveWindows"      className="InteractiveWindows"      filename="specializations/InteractiveWindows.lua" />
-		<specialization name="extendedAnimationSounds" className="ExtendedAnimationSounds" filename="specializations/ExtendedAnimationSounds.lua" />
-		<specialization name="enterAnimationFix"       className="EnterAnimationFix"       filename="specializations/EnterAnimationFix.lua"/>
 		<specialization name="variableTirePressure"    className="VariableTirePressure"    filename="specializations/VariableTirePressure.lua"/>
     </specializations>
 	
@@ -30,118 +25,42 @@
 		<type name="JohnDeere7010" parent="tractor" filename="$dataS/scripts/vehicles/Vehicle.lua" >
 			<specialization name="foldable" />
 			<specialization name="cover" />
-			<specialization name="terminalBoot" />
-			<specialization name="interactiveControl" />
-			<specialization name="interactiveWindows" />
-			<specialization name="extendedAnimationSounds" />
 			<specialization name="addConfig"/>
-			<specialization name="enterAnimationFix"/>
 			<specialization name="variableTirePressure"/>
 		</type>
 	</vehicleTypes>	
 	
 	<l10n>
-		<text name="configuration_fendt">                   <en>Agco Fendt Vario 1000</en>       <de>Agco Fendt Vario 1000</de>             </text>
-		<text name="configuration_challenger">              <en>Agco Challenger</en>             <de>Agco Challenger</de>                   </text>
-		<text name="configuration_challengerSpezial">       <en>Agco Challenger Spezial</en>     <de>Agco Challenger Spezial</de>           </text>
-		
-		<text name="configuration_jenz">
-			<en>
-<![CDATA[Agco Fendt Jenz 
-Machinery]]>
-			</en>   
-			<de>
-<![CDATA[Agco Fendt Jenz
-Forstmaschinen]]>
-			</de>
-		</text>
-		
-		<text name="configuration_jenzSpezial">             
-		    <en>
-<![CDATA[Agco Fendt Jenz 
-Machinery Spezial]]>
-            </en>   
-            <de>
-<![CDATA[Agco Fendt Jenz 
-Forstmaschinen Spezial]]>
-            </de>    
-		</text>
-		
-		<text name="configuration_fendtSilver">             <en>Acgo Fendt Silver Gray</en>       <de>Agco Fendt Silber-Grau</de>                        </text>
-		<text name="configuration_fendtSilverSpezial">      
-		    <en>
-<![CDATA[Agco Fendt Silver Gray 
-Spezial]]>
-            </en>      
-		    <de>
-<![CDATA[Agco Fendt Silber-Grau
-Spezial]]>
-            </de>           
-		</text>
 			
-        <text name="configuration_brand">                   <en>Brand</en>          	          <de>Marke</de>                                         </text>
-        <text name="configuration_hoodColor">               <en>Radiator Grill</en>          	  <de>Kühlergrill</de>                                   </text>
-        <text name="configuration_seatColor">               <en>Seat Color</en>          	      <de>Sitzfarbe</de>                                     </text>
-		
         <text name="configuration_varioGrip">               <en>Vario Grip</en>          	      <de>Vario Grip</de>                                    </text>
-		<text name="configuration_valueTwinWheelsAllUS">    <en>Twin Wheels US</en>               <de>Doppelreifen US</de>                               </text>
 		
-        <text name="configuration_forestCage">              <en>Forest Cage</en>          	      <de>Forstkäfig</de>                                    </text>
-		
-		<text name="configuration_fendersFront">            <en>Front fender</en>                 <de>Frontkotflügel</de>                                </text>
-		
+		<!--
 		<text name="input_IC_SPACE">                        <en>Switch IC State</en>              <de>IC-Status wechseln</de>                            </text>
         <text name="input_IC_MOUSE">                        <en>Change IC State</en>              <de>IC aktivieren</de>                                 </text>
-        <text name="InteractiveControl_Off">                <en>Disable IC</en>                   <de>IC deaktivieren</de>                               </text>
-        <text name="InteractiveControl_On">                 <en>Enable IC</en>                    <de>IC aktivieren</de>                                 </text>
-        <text name="ic_component_close">                    <en>Close %s</en>                     <de>Schließen %s</de>                                  </text>
-        <text name="ic_component_open">                     <en>Open %s</en>                      <de>Öffnen %s</de>                                     </text>
-        <text name="ic_button_on">                          <en>Activate %s</en>                  <de>Aktivieren %s</de>                                 </text>
-        <text name="ic_button_off">                         <en>Deactivate %s</en>                <de>Deaktivieren %s</de>                               </text>
-		<text name="doorLeftMovement">                      <en>Left door</en>                    <de>Linke Tür</de>                                     </text>
-		<text name="doorBackMovement">                      <en>Rear window</en>                  <de>Heckscheibe</de>                                   </text>
-		<text name="doorTopMovement">                       <en>Roof hatch</en>                   <de>Dachluke</de>                                      </text>		
-		<text name="warningLeftMovement">                   <en>Warning Left</en>                 <de>Warntafel Links</de>                               </text>		
-		<text name="warningRightMovement">                  <en>Warning Right</en>                <de>Warntafel Rechts</de>                              </text>	
-
-        <text name="configuration_beaconLight">             <en>Beacon Lights</en>                <de>Rundumleuchten</de>                                </text>	
-
-        <text name="configuration_honk">                    <en>Honk</en>                         <de>Hupe</de>                                          </text>
-        <text name="configuration_fendtHorn">               <en>Fendt air horn</en>               <de>Fendt Druck Horn</de>                              </text>
-		
-		<text name="configuration_valueTwinWheelsBackNarrowFixed">
-            <en>
-<![CDATA[Rear narrow 
-twin wheels]]>
-			</en>
-            <de>
-<![CDATA[Zwillingspflegebereifung
-Hinten]]>
-			</de>
-        </text>
+		-->
 		
 		<text name="info_tireFilling">					     <en>Variogrip Info: Air Filling</en>		 			   <de>Variogrip Info: Luft auffüllen</de>			      </text>
 		<text name="info_tireEmptying">					     <en>Variogrip Info: Air emptying</en>		 			   <de>Variogrip Info: Luft ablassen</de>	   			  </text>
 		<text name="info_tireCurrentPressure">			     <en>%s (%1.2f bar) air pressure (presently)</en>		   <de>%s (%1.2f bar) Luftdruck (aktuell)</de>		      </text>
         <text name="action_tireChangeTarget">			     <en>Variogrip Info: Change wheel pressure to %s bar</en>  <de>Variogrip Info: Reifendruck ändern in %s bar</de>  </text>
 		
-		<text name="input_SET_TIRE_PRESSURE">                <en>Set tire pressure</en>                                <de>Reifendruck ändern</de>                            </text>
+		<text name="input_SET_TIRE_PRESSURE">                <en>RDA: Set tire pressure</en>                                <de>RDA: Reifendruck ändern</de>                            </text>
         </l10n>
 
     <actions>
-		<action name="IC_SPACE" 		 category="VEHICLE"	axisType="HALF"/>
-		<action name="IC_MOUSE" 		 category="VEHICLE"	axisType="HALF"/>	
+		<!--<action name="IC_SPACE" 		 category="VEHICLE"	axisType="HALF"/>
+		<action name="IC_MOUSE" 		 category="VEHICLE"	axisType="HALF"/>-->	
 		<action name="SET_TIRE_PRESSURE" category="VEHICLE" ignoreComboMask="false"/>
 	</actions>
 	
    <inputBinding>
-   		<actionBinding action="IC_SPACE">
+   		<!--<actionBinding action="IC_SPACE">
 			<binding device="KB_MOUSE_DEFAULT" 	input="KEY_space" axisComponent="+" neutralInput="0" index="1"/>
 		</actionBinding>
 		
 		<actionBinding action="IC_MOUSE">
 			<binding device="KB_MOUSE_DEFAULT" input="MOUSE_BUTTON_LEFT" index="3"/>
-		</actionBinding>
+		</actionBinding>-->
 		
 		<actionBinding action="SET_TIRE_PRESSURE">
 			<binding device="KB_MOUSE_DEFAULT" input="KEY_k" axisComponent="+" neutralInput="0" index="1"/>

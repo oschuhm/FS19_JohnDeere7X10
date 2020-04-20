@@ -57,6 +57,8 @@ end;
 function VariableTirePressure:onLoad(savegame)
 	local specVariableTirePressure = getSpecByName(self, "variableTirePressure");
 	
+	print("JD RDA -> run onLoad(savegame)");
+	
 	specVariableTirePressure.configName = Utils.getNoNil(getXMLString(self.xmlFile, "vehicle.variableTirePressure#configName"), "");
 	specVariableTirePressure.activeConfigs = Utils.getNoNil(getXMLString(self.xmlFile, "vehicle.variableTirePressure#activeConfigs"), "");
 	specVariableTirePressure.isBought = false;
@@ -135,6 +137,9 @@ function VariableTirePressure:onLoad(savegame)
 			}
 		);
 	end;
+	
+	--DebugUtil.printTableRecursively(specVariableTirePressure, "RDA_onLoad>>", 0, 2)
+	
 end;
 
 function VariableTirePressure:onDelete()
@@ -214,6 +219,8 @@ end;
 function VariableTirePressure:onUpdate(dt)
 	local specVariableTirePressure = getSpecByName(self, "variableTirePressure");
 	local specWheels = getSpecByName(self, "wheels");
+	
+	--print("RDA -> onUpdate; specVariableTirePressure.isBought: "..tostring(specVariableTirePressure.isBought));
 	
 	if specVariableTirePressure.isBought then		
 		local pressureSpeed = specVariableTirePressure.pressureSpeed * dt;
