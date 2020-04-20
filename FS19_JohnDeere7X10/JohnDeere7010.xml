@@ -43,7 +43,7 @@
 	
 	<!-- If you only want to active it for a specific configuration/configurations -->
 	<!-- <tirePressure min="60" configurationName="wheel" configurationIndices="2 8 9"> -->
-	<tirePressure>
+	<tirePressure configurationName="wheel" configurationIndices="2 4">
 		<sounds>
             <air template="DEFAULT_SOWING_AIR_BLOWER">
 			<volume indoor="0.4" outdoor="0.85" />
@@ -77,6 +77,26 @@
                 <objectChange node="wideMudGuard" visibilityActive="false" />
                 <objectChange node="mudGuard" visibilityActive="true" />
             </wheelConfiguration>
+			<wheelConfiguration name="$l10n_configuration_valueDefaultTPS" price="0" brand="TRELLEBORG">
+                <wheels autoRotateBackSpeed="2.0">
+                    <wheel filename="wheels/600_65R28.xml" configId="tirePressureSystem" isLeft="true" hasTireTracks="true" hasParticles="true" >
+                        <physics rotSpeed="1" restLoad="2.8" repr="axisFrontLeft"  driveNode="wheelFrontLeft"  forcePointRatio="0.5" initialCompression="25" suspTravel="0.27" spring="38" damper="60" />
+                        <fender node="fenderFrontLeft" rotMax="28" />
+                    </wheel>
+                    <wheel filename="wheels/600_65R28.xml" configId="tirePressureSystem" isLeft="false" hasTireTracks="true" hasParticles="true" >
+                        <physics rotSpeed="1" restLoad="2.8" repr="axisFrontRight" driveNode="wheelFrontRight" forcePointRatio="0.5" initialCompression="25" suspTravel="0.27" spring="38" damper="60" />
+                        <fender node="fenderFrontRight" rotMin="-28.5" />
+                    </wheel>
+                    <wheel filename="wheels/710_70R38.xml" configId="tirePressureSystem" isLeft="true" hasTireTracks="true" hasParticles="true" >
+                        <physics rotSpeed="0" restLoad="2.7" repr="wheelBackLeft"  forcePointRatio="0.5" initialCompression="20" suspTravel="0.33" spring="34" damper="60" />
+                    </wheel>
+                    <wheel filename="wheels/710_70R38.xml" configId="tirePressureSystem" isLeft="false" hasTireTracks="true" hasParticles="true" >
+                        <physics rotSpeed="0" restLoad="2.7" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.33" spring="34" damper="60" />
+                    </wheel>
+                </wheels>
+                <objectChange node="wideMudGuard" visibilityActive="false" />
+                <objectChange node="mudGuard" visibilityActive="true" />
+            </wheelConfiguration>
 			<wheelConfiguration name="$l10n_configuration_valueWheelBroad" price="1800" brand="TRELLEBORG">
                 <wheels autoRotateBackSpeed="2.0">
                     <wheel filename="wheels/600_70R28.xml"  isLeft="true" hasTireTracks="true" hasParticles="true" >
@@ -91,6 +111,26 @@
                         <physics rotSpeed="0" restLoad="2.7" repr="wheelBackLeft"  forcePointRatio="0.5" initialCompression="20" suspTravel="0.33" spring="34" damper="60" />
                     </wheel>
                     <wheel filename="wheels/710_70R42.xml"  isLeft="false" hasTireTracks="true" hasParticles="true" >
+                        <physics rotSpeed="0" restLoad="2.7" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.33" spring="34" damper="60" />
+                    </wheel>
+                </wheels>
+                <objectChange node="wideMudGuard" visibilityActive="true" />
+                <objectChange node="mudGuard" visibilityActive="false" />
+            </wheelConfiguration>
+			<wheelConfiguration name="$l10n_configuration_valueWheelBroadTPS" price="1800" brand="TRELLEBORG">
+                <wheels autoRotateBackSpeed="2.0">
+                    <wheel filename="wheels/600_70R28.xml" configId="tirePressureSystem" isLeft="true" hasTireTracks="true" hasParticles="true" >
+                        <physics rotSpeed="1" restLoad="2.8" repr="axisFrontLeft"  driveNode="wheelFrontLeft"  forcePointRatio="0.5" initialCompression="25" suspTravel="0.27" spring="38" damper="60" />
+                        <fender node="fenderFrontLeft" rotMax="28" />
+                    </wheel>
+                    <wheel filename="wheels/600_70R28.xml" configId="tirePressureSystem" isLeft="false" hasTireTracks="true" hasParticles="true" >
+                        <physics rotSpeed="1" restLoad="2.8" repr="axisFrontRight" driveNode="wheelFrontRight" forcePointRatio="0.5" initialCompression="25" suspTravel="0.27" spring="38" damper="60" />
+                        <fender node="fenderFrontRight" rotMin="-28.5" />
+                    </wheel>
+                    <wheel filename="wheels/710_70R42.xml" configId="tirePressureSystem" isLeft="true" hasTireTracks="true" hasParticles="true" >
+                        <physics rotSpeed="0" restLoad="2.7" repr="wheelBackLeft"  forcePointRatio="0.5" initialCompression="20" suspTravel="0.33" spring="34" damper="60" />
+                    </wheel>
+                    <wheel filename="wheels/710_70R42.xml" configId="tirePressureSystem" isLeft="false" hasTireTracks="true" hasParticles="true" >
                         <physics rotSpeed="0" restLoad="2.7" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="20" suspTravel="0.33" spring="34" damper="60" />
                     </wheel>
                 </wheels>
@@ -168,7 +208,7 @@
             <ackermannSteering rotSpeed="40" rotMax="40" rotCenterWheel1="3" rotCenterWheel2="4" />
         </ackermannSteeringConfigurations>
 		
-		<!-- <rimColor>JOHNDEERE_YELLOW1</rimColor> -->
+		<rimColor>JOHNDEERE_YELLOW1</rimColor>
     </wheels>
 	
     <speedRotatingParts>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <modDesc descVersion="42">
     <author>IPF/Virtual Agriculture Modding,STv-Modding,LS-Farmers</author>
-    <version>1.1.0.0.8</version>
+    <version>1.1.0.0.9</version>
     <title>
         <en>John Deere 7010 Pack</en>
     </title>
@@ -41,7 +41,15 @@
     </inputBinding>
 	
 	<l10n>
-        <text name="information_tirePressure">
+        <text name="configuration_valueDefaultTPS">
+            <en>Standard TPS</en>
+			<de>Standard RDA</de>
+        </text>
+        <text name="configuration_valueWheelBroadTPS">
+            <en>BroadWheel TPA</en>
+			<de>Breitreifen RDA</de>
+        </text>
+		<text name="information_tirePressure">
             <en>Tire pressure [target: %1.2f bar] [current: %1.2f bar]</en>
 			<de>Reifendruck [Ziel: %1.2f bar] [Aktuell: %1.2f bar]</de>
         </text>

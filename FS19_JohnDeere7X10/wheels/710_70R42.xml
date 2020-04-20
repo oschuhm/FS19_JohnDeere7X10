@@ -19,5 +19,8 @@
         <configuration id="weight2" >
             <additional filename="$data/shared/wheels/weights/weight002.i3d" nodeLeft="1|0" nodeRight="1|1" offset="-0.04" scale="1 0.85 0.85" mass="0.8" />
         </configuration>
+		<configuration id="tirePressureSystem" >
+            <additional filename="hub/hub.i3d" nodeLeft="0|0" nodeRight="0|1" offset="-0.07" scale="1 1.025 1.025"/>
+        </configuration>
     </configurations>
 </wheel>
