@@ -54,7 +54,8 @@
 			</air>
 		</sounds>
 		<dashboards>
-			<dashboard displayType="NUMBER" valueType="currentTirePressure" numbers="numbersTirePressure" numberColor="0 0 0 0.6" precision="2" groups="MOTOR_ACTIVE"/>
+			<!--<dashboard displayType="NUMBER" valueType="currentTirePressure" numbers="numbersTirePressure" numberColor="0 0 0 0.6" precision="2" groups="MOTOR_ACTIVE"/>-->
+			<dashboard displayType="NUMBER" valueType="currentTirePressure" numbers="numbersTirePressure" numberColor="0 0 0 0" precision="2" groups="MOTOR_ACTIVE"/>
 		</dashboards>
 	</tirePressure>
 	
