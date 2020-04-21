@@ -373,7 +373,7 @@ function TirePressure:getInflationPressure()
 end
 
 function TirePressure:getInflationPressureForDisplay()
-    print ("Debug: InflationPressure -> "..tostring(self.spec_tirePressure.inflationPressure / 100))
+    --print ("Debug: InflationPressure -> "..tostring(self.spec_tirePressure.inflationPressure / 100))
 	return self.spec_tirePressure.inflationPressure / 100
 end
 
