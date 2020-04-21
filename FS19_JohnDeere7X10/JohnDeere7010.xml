@@ -53,6 +53,9 @@
 				</pitch>
 			</air>
 		</sounds>
+		<dashboards>
+			<dashboard displayType="NUMBER" valueType="currentTirePressure" numbers="numbersTirePressure" numberColor="0 0 0 0.6" precision="2" groups="MOTOR_ACTIVE"/>
+		</dashboards>
 	</tirePressure>
 	
     <wheels>
@@ -964,6 +967,9 @@
 		<i3dMapping id="rearWindowLeftCylinderInside" 	node="0>0|12|3|8|0" />
 		<i3dMapping id="rearWindowRightCylinder" 	node="0>0|12|3|0|3|1|0" />
 		<i3dMapping id="rearWindowRightCylinderInside" 	node="0>0|12|3|9|0" />
+		
+		<!-- zusätzliche Displays -->
+		<i3dMapping id="numbersTirePressure"            node="0>0|16|0" />
 		
     </i3dMappings>
 </vehicle>

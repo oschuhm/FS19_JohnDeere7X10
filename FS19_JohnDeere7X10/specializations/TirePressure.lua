@@ -85,6 +85,7 @@ function TirePressure.registerFunctions(vehicleType)
     SpecializationUtil.registerFunction(vehicleType, "updateInflation", TirePressure.updateInflation)
     SpecializationUtil.registerFunction(vehicleType, "updateInflationPressure", TirePressure.updateInflationPressure)
     SpecializationUtil.registerFunction(vehicleType, "getInflationPressure", TirePressure.getInflationPressure)
+	SpecializationUtil.registerFunction(vehicleType, "getInflationPressureForDisplay", TirePressure.getInflationPressureForDisplay)
     SpecializationUtil.registerFunction(vehicleType, "setInflationPressure", TirePressure.setInflationPressure)
     SpecializationUtil.registerFunction(vehicleType, "getInflationPressureTarget", TirePressure.getInflationPressureTarget)
     SpecializationUtil.registerFunction(vehicleType, "setInflationPressureTarget", TirePressure.setInflationPressureTarget)
@@ -178,6 +179,20 @@ function TirePressure:onLoad(savegame)
         spec.samples = {}
         spec.samples.air = g_soundManager:loadSampleFromXML(self.xmlFile, "vehicle.tirePressure.sounds", "air", self.baseDirectory, self.components, 1, AudioGroup.VEHICLE, self.i3dMappings, self)
     end
+	
+	if self.loadDashboardsFromXML ~= nil then
+		self:loadDashboardsFromXML(
+			self.xmlFile, 
+			"vehicle.tirePressure.dashboards", 
+			{
+				valueTypeToLoad = "currentTirePressure",
+				valueObject = self,
+				valueFunc = "getInflationPressureForDisplay",
+				minFunc = 0,
+				maxFunc = 9
+			}
+		);
+	end;
 end
 
 function TirePressure:onPostLoad(savegame)
@@ -354,7 +369,12 @@ function TirePressure:updateInflation(isInflating, noEventSend)
 end
 
 function TirePressure:getInflationPressure()
-    return self.spec_tirePressure.inflationPressure
+	return self.spec_tirePressure.inflationPressure
+end
+
+function TirePressure:getInflationPressureForDisplay()
+    print ("Debug: InflationPressure -> "..tostring(self.spec_tirePressure.inflationPressure / 100))
+	return self.spec_tirePressure.inflationPressure / 100
 end
 
 function TirePressure:setInflationPressure(pressure)
