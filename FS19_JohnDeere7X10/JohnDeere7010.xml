@@ -310,6 +310,9 @@
 		<dashboards>
             <dashboard valueType="lightState" displayType="EMITTER" node="lightPanel" lightTypes="0" idleValue="0" intensity="0.5" groups="MOTOR_ACTIVE" />
             <dashboard valueType="lightState" displayType="EMITTER" node="dashboard" lightTypes="0" idleValue="0" intensity="0.5" groups="MOTOR_ACTIVE" />
+			<dashboard displayType="EMITTER" valueType="turnLightLeft"  node="turnlightLeft01_decal"    baseColor="BLACK" emitColor="GREEN" />                                     
+			<dashboard displayType="EMITTER" valueType="turnLightRight" node="turnlightRight02_decal"   baseColor="BLACK" emitColor="GREEN" />
+			<dashboard displayType="EMITTER" valueType="turnLightHazard" node="hazard"  		baseColor="BLACK" emitColor="ORANGE" intensity="4"/>			
         </dashboards>
     </lights>
 	
@@ -947,6 +950,9 @@
         <i3dMapping id="frontRightSteeringHydraulicPunch" node="1>1|1|0|0" />
 		<i3dMapping id="windowBack" node="0>0|12|3|0" />
 		<i3dMapping id="doorLeft" node="0>0|12|3|2" />
+		<i3dMapping id="turnlightLeft01_decal" node="0>0|12|3|7|0|4|7|0" />
+		<i3dMapping id="turnlightRight02_decal" node="0>0|12|3|7|0|4|8|0" />
+		<i3dMapping id="hazard" node="0>0|12|3|7|0|4|9|0" />
 		
 		<!-- LS19 Player Zeugs -->
 		<!-- Gerade kein Bock ... kommt später
