@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<sounds>
+    <motorStart template="MEDIUM_TRACTOR_MOTOR_START" file="sounds/start_JD7810.wav" linkNode="0>"/>
+    <motorStop template="MEDIUM_TRACTOR_MOTOR_STOP" file="$data/sounds/vehicles/engine/john_deere_6135m_4cyl/john_deere_6135m_4cyl_stop.wav" linkNode="0>"/>
+
+    <motor template="MEDIUM_TRACTOR_MOTOR_IDLE" file="$data/sounds/vehicles/engine/john_deere_6250r/john_deere_6250r_idle_loop.wav" linkNode="0>"/>
+    <motor template="MEDIUM_TRACTOR_MOTOR_OFFLOAD_RUN" file="sounds/run_JD7810.wav" linkNode="0>"/>
+    <motor template="MEDIUM_TRACTOR_MOTOR_ONLOAD_RUN" file="sounds/load_JD7810.wav" linkNode="0>"/>
+
+    <gearbox template="DEFAULT_GEARBOX_JD" file="sounds/transmission_JD7810.wav" linkNode="0>"/>
+    <retarder template="DEFAULT_RETARDER" file="$data/sounds/vehicles/transmission/transmission_loop_02.wav" linkNode="0>"/>
+
+    <airCompressorStart template="BRAKE_COMPRESSOR_START" linkNode="0>"/>
+    <airCompressorStop template="BRAKE_COMPRESSOR_STOP" linkNode="0>"/>
+    <airCompressorRun template="BRAKE_COMPRESSOR_RUN" linkNode="0>"/>
+    <compressedAir template="BRAKE_SMALL" linkNode="0>"/>
+    <airRelease template="BRAKE_REGULATOR_VALVE" linkNode="0>"/>
+</sounds>

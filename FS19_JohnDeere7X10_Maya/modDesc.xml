@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="42">
+    <author>IPF/Virtual Agriculture Modding,STv-Modding,LS-Farmers</author>
+    <version>1.1.0.0.10</version>
+    <title>
+        <en>John Deere 7010 Pack</en>
+    </title>
+    <description>
+        <en>John Deere 7010 Pack</en>
+    </description>
+    <iconFilename>store_7010.png</iconFilename>
+    <multiplayer supported="true"/>
+	
+    <storeItems>
+        <storeItem rootNode="vehicle" xmlFilename="JohnDeere7010.xml"/>
+    </storeItems>
+	
+	<specializations>
+        <specialization name="tirePressure" className="TirePressure" filename="specializations/TirePressure.lua" />
+    </specializations>
+	
+	<vehicleTypes>
+		<type name="JD7x10" parent="tractor" filename="$dataS/scripts/vehicles/Vehicle.lua">
+			<specialization name="tirePressure" />
+		</type>
+	</vehicleTypes>
+	
+	<actions>
+        <action name="TP_AXIS_PRESSURE" axisType="FULL"/>
+        <action name="TP_TOGGLE_PRESSURE" axisType="HALF"/>
+    </actions>
+	
+	<inputBinding>
+		<actionBinding action="TP_TOGGLE_PRESSURE">
+            <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_p"/>
+		</actionBinding>
+		<actionBinding action="TP_AXIS_PRESSURE">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_pageup" axisComponent="+"/>
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_pagedown" axisComponent="-"/>
+		</actionBinding>
+    </inputBinding>
+	
+	<l10n>
+        <text name="configuration_valueDefaultTPS">
+            <en>Standard TPS</en>
+			<de>Standard RDA</de>
+        </text>
+        <text name="configuration_valueWheelBroadTPS">
+            <en>BroadWheel TPA</en>
+			<de>Breitreifen RDA</de>
+        </text>
+		<text name="information_tirePressure">
+            <en>Tire pressure [target: %1.2f bar] [current: %1.2f bar]</en>
+			<de>Reifendruck [Ziel: %1.2f bar] [Aktuell: %1.2f bar]</de>
+        </text>
+        <text name="action_toggleTirePressure">
+            <en>Toggle pressure</en>
+			<de><![CDATA[Luft ablassen / aufblasen]]></de>
+        </text>
+        <text name="input_TP_TOGGLE_PRESSURE">
+            <en>Update pressure</en>
+			<de>Reifendruck einstellen</de>
+        </text>
+        <text name="input_TP_AXIS_PRESSURE_1">
+            <en>Inflate</en>
+			<de>Aufpumpen</de>
+        </text>
+		<text name="input_TP_AXIS_PRESSURE_2">
+            <en>Deflate</en>
+			<de>Ablassen</de>
+        </text>
+	</l10n>
+	
+</modDesc>

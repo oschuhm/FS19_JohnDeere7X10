@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<i3D name="hub" version="1.6" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://i3d.giants.ch/schema/i3d-1.6.xsd">
+
+  <Files>
+    <File fileId="1" filename="hub_normal.png" />
+    <File fileId="2" filename="hub_specular.dds" />
+    <File fileId="3" filename="$data/shaders/vehicleShader.xml" />
+  </Files>
+
+  <Materials>
+    <Material name="hub_mat" materialId="1" diffuseColor="0.5 0.5 0.5 1" cosPower="30" specularColor="1 1 1" ambientColor="1 1 1" customShaderId="3" customShaderVariation="colorMask">
+      <CustomParameter name="RDT" value="1.0 1.0 0.0 0.0"/>
+      <CustomParameter name="colorMat0" value="0.0987 0.0987 0.0987 0"/>
+      <CustomParameter name="colorMat5" value="0.0189 0.1332 0.2575 5"/>
+      <Normalmap fileId="1"/>
+      <Glossmap fileId="2"/>
+    </Material>
+  </Materials>
+
+
+  <Shapes externalShapesFile="hub.i3d.shapes">
+  </Shapes>
+
+  <Scene>
+    <TransformGroup name="hub" collision="false" clipDistance="300" nodeId="1">
+      <Shape name="left" shapeId="1" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="2"/>
+      <Shape name="right" rotation="0 180 0" shapeId="2" castsShadows="true" receiveShadows="true" materialIds="1" clipDistance="300" nodeId="3"/>
+    </TransformGroup>
+  </Scene>
+
+  <UserAttributes>
+  </UserAttributes>
+</i3D>

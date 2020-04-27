@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<wheel>
+    <default>
+        <physics radius="0.792" width="0.6" mass="0.213" tireType="mud" frictionScale="1.60" maxLongStiffness="8" maxLatStiffness="100" maxLatStiffnessLoad="2" />
+        <tire filename="$data/shared/wheels/michelin/axioBib/R30_axioBib.i3d" nodeLeft="0|0" nodeRight="0|0" maxDeformation="0.082" isCareWheel="false" tireTrackAtlasIndex="0" />
+        <!-- <outerRim filename="$data/shared/wheels/rims/rim001.i3d" node="1|0" widthAndDiam="21 30" /> -->
+        <innerRim filename="wheels/rims.i3d" nodeLeft="0|0" nodeRight="0|1" scale="0.82 1.02 1.02" />
+    </default>
+</wheel>
