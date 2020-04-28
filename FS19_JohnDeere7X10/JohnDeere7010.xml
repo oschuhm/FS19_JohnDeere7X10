@@ -271,7 +271,7 @@
 				</gears>
 				<reverser type="normal" > 
 					<ratios forward="1" reverse="1" />
-					<settings brakeAggressionBias="0.3" clutchTime="500" />
+					<settings brakeAggressionBias="0.3" clutchTime="0" />
 				</reverser>	
 			</realManualTransmission>
 		</realManualTransmissionConfiguration>
