@@ -10,6 +10,7 @@
         </specs>
         <functions>
             <function>$l10n_function_tractor</function>
+			<function>$l10n_function_tractorFrontloader</function>
         </functions>
         <image>store_7010.png</image>
         <price>70000</price>
@@ -413,6 +414,18 @@
         <output attacherJointIndices="2 5" outputNode="ptoFront" />
     </powerTakeOffs>
 	
+	<frontloaderConfigurations>
+        <frontloaderConfiguration name="$l10n_ui_no" price="0" >
+            <objectChange node="frontloaderAttacherFrame" visibilityActive="false" />
+        </frontloaderConfiguration>
+        <frontloaderConfiguration name="$l10n_ui_yes" price="1500" >
+            <objectChange node="frontloaderAttacherFrame" visibilityActive="true" visibilityInactive="false"/>
+            <attacherJoint node="frontloaderAttacherJoint" jointType="attachableFrontloader" lowerTransLimit="0 0 0" lowerRotLimit="0 0 0" moveTime="2" >
+                <schema position="1 0.4" rotation="0" invertX="true" />
+            </attacherJoint>
+        </frontloaderConfiguration>
+    </frontloaderConfigurations>
+	
     <!-- <attachable>
         <airConsumer usage="2500"/>
     </attachable> -->
@@ -436,8 +449,8 @@
             <target ikChain="rightArm"  targetNode="playerRightHandTarget" />
             <target ikChain="leftArm"   targetNode="playerLeftHandTarget" />
         </characterNode>
-
-        <!-- <characterTargetNodeModifier node="playerRightHandTarget" transitionTime="0.2">
+		
+		<characterTargetNodeModifier node="playerRightHandTarget" transitionTime="0.2">
             <state node="playerRightHandTargetFrontloader" referenceNode="frontloaderJoystick"/>
         </characterTargetNodeModifier>
 
@@ -721,6 +734,10 @@
                 <translatingPart node="mainArmHydraulicPunch" />
             </movingPart>
         </movingParts>
+		<dashboards>
+            <dashboard displayType="ROT" valueType="movingTool" node="frontloaderJoystick" rotAxis="1" minRot="-15" maxRot="15" axis="AXIS_FRONTLOADER_ARM"  attacherJointIndex="6" doInterpolation="true" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ROT" valueType="movingTool" node="frontloaderJoystick" rotAxis="3" minRot="-15" maxRot="15" axis="AXIS_FRONTLOADER_TOOL" attacherJointIndex="6" doInterpolation="true" groups="MOTOR_ACTIVE"/>
+        </dashboards>
     </cylindered>
 	
 	<connectionHoses>
@@ -1009,6 +1026,12 @@
         <i3dMapping id="brakePedal" node="0>0|9|3|2" />
         <i3dMapping id="playerRightFootTargetBrake" node="0>0|12|0|11" />
 		-->
+		
+		<!-- Frontlader -->
+		<i3dMapping id="frontloaderJoystick" node="0>0|5|3" />
+        <i3dMapping id="playerRightHandTargetFrontloader" node="0>0|5|3" />
+		<i3dMapping id="frontloaderAttacherFrame" node="0>0|3|5|0" />
+        <i3dMapping id="frontloaderAttacherJoint" node="0>0|3|5|0|0" />
 		
 		<!-- simpleIC Mappings -->
 		<i3dMapping id="sIC_playerTrigger" node="0>0|12|12" />
