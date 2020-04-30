@@ -44,7 +44,7 @@
 	
 	<!-- If you only want to active it for a specific configuration/configurations -->
 	<!-- <tirePressure min="60" configurationName="wheel" configurationIndices="2 8 9"> -->
-	<tirePressure configurationName="wheel" configurationIndices="2 4">
+	<tirePressure min="0" configurationName="wheel" configurationIndices="2 4">
 		<sounds>
             <air template="DEFAULT_SOWING_AIR_BLOWER">
 			<volume indoor="0.4" outdoor="0.85" />
@@ -271,7 +271,7 @@
 				</gears>
 				<reverser type="normal" > 
 					<ratios forward="1" reverse="1" />
-					<settings brakeAggressionBias="0.3" clutchTime="0" />
+					<settings brakeAggressionBias="0.5" clutchTime="0" />
 				</reverser>	
 			</realManualTransmission>
 		</realManualTransmissionConfiguration>
@@ -538,6 +538,8 @@
             <dashboard displayType="NUMBER" valueType="speed" numbers="numbersSpeed1" precision="1" numberColor="0 0 0 0" groups="MOTOR_ACTIVE"/>
 			<dashboard displayType="ANIMATION" valueType="rpm" animName="rpmDisplay" minValueAnim="0" maxValueAnim="2200" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="ANIMATION" valueType="motorTemperature" animName="loadingBarTemperature" minValueAnim="20" maxValueAnim="120" groups="MOTOR_ACTIVE"/>
+			<!--<dashboard displayType="ANIMATION" valueType="speed" animName="chooseForwardBackward" minValueAnim="0" maxValueAnim="50" groups="MOTOR_ACTIVE"/>-->
+			<dashboard displayType="ANIMATION" valueType="speedDir" animName="chooseForwardBackward" groups="MOTOR_ACTIVE"/>
         </dashboards>
 		
 		<sounds externalSoundFile="sounds/sounds7010.xml" />
@@ -552,16 +554,38 @@
 		
 		<dashboards>
 		    <!-- <dashboard displayType="ANIMATION" valueType="rpm" animName="rpmDisplay" minValueAnim="0" maxValueAnim="2200" groups="MOTOR_ACTIVE"/> -->
-            <!-- <dashboard displayType="ROT"     valueType="accelerationAxis" node="gasPedal"   minRot="0 0 0" maxRot="25 0 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
-            <dashboard displayType="ROT"     valueType="decelerationAxis" node="brakePedal" minRot="0 0 0" maxRot="-25 0 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
-            <dashboard displayType="ANIMATION" valueType="movingDirection" animName="movingDirectionAnim" doInterpolation="true" interpolationSpeed="0.01" groups="MOTOR_ACTIVE"/>
-            <dashboard displayType="ROT"     valueType="ac_decelerationAxis" node="joystick"   minRot="-5 0 0" maxRot="5 0 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
+            <dashboard displayType="ANIMATION"     valueType="accelerationAxis" animName="moveGasLever" doInterpolation="true" groups="MOTOR_ACTIVE"/>
+            <!--<dashboard displayType="ROT"     valueType="decelerationAxis" node="brakePedal" minRot="0 0 0" maxRot="-25 0 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>-->
+            <!--<dashboard displayType="ANIMATION" valueType="movingDirection" animName="chooseForwardBackward" minValueAnim="0" maxValueAnim="4" groups="MOTOR_ACTIVE"/>-->
+			<!--<dashboard displayType="ANIMATION" valueType="rpm" animName="chooseForwardBackward" minValueAnim="0" maxValueAnim="2200" doInterpolation="true" interpolationSpeed="0.001" groups="MOTOR_ACTIVE"/>-->
+            <!--<dashboard displayType="ROT"     valueType="ac_decelerationAxis" node="joystick"   minRot="-5 0 0" maxRot="5 0 0" doInterpolation="true" groups="MOTOR_ACTIVE"/>
             <dashboard displayType="NUMBER"  valueType="cruiseControl" numbers="numbersCruiseControl" numberColor="0.1 0.1 0.1 1" precision="1" groups="MOTOR_ACTIVE"/> -->
         </dashboards>
     </drivable>
 	
     <animations>
-        <animation name="loadingBarTemperature">
+        <animation name="chooseForwardBackward">
+            <!-- Rückwärts fahren -->
+			<part node="gearLever" startTime="0.00" endTime="0.95" endTrans="-0.557 2.055 -0.574" startTrans="-0.54 2.055 -0.611"/>
+			<!-- in Fahrposition Rückwärts schalten -->
+			<part node="gearLever" startTime="0.95" endTime="0.96" endTrans="-0.495 2.055 -0.544" startTrans="-0.557 2.055 -0.574"/>
+			<part node="gearLever" startTime="0.96" endTime="0.97" endTrans="-0.475 2.055 -0.586" startTrans="-0.495 2.055 -0.544"/>
+			<part node="gearLever" startTime="0.97" endTime="0.98" endTrans="-0.499 2.055 -0.6"   startTrans="-0.475 2.055 -0.586"/>
+			<part node="gearLever" startTime="0.98"  endTime="0.99" endTrans="-0.502 2.055 -0.586" startTrans="-0.499 2.055 -0.6"/>
+			<!-- Park Position -->
+			<part node="gearLever" startTime="1.00"  endTime="1.00" startTrans="-0.502 2.055 -0.586" endTrans="-0.502 2.055 -0.586"/>
+			<!-- In Fahrposition Vorwärts schalten -->
+			<part node="gearLever" startTime="1.01"  endTime="1.02" startTrans="-0.502 2.055 -0.586" endTrans="-0.499 2.055 -0.6"/>
+			<part node="gearLever" startTime="1.02" endTime="1.025" startTrans="-0.499 2.055 -0.6" endTrans="-0.475 2.055 -0.586"/>
+			<part node="gearLever" startTime="1.025" endTime="1.03" startTrans="-0.475 2.055 -0.586" endTrans="-0.495 2.055 -0.544"/>
+			<part node="gearLever" startTime="1.03" endTime="1.035" startTrans="-0.495 2.055 -0.544" endTrans="-0.542 2.055 -0.559"/>
+			<!-- Vorwärts fahren -->
+			<part node="gearLever" startTime="1.035" endTime="2.0" startTrans="-0.542 2.055 -0.559" endTrans="-0.592 2.055 -0.457"/>
+        </animation>
+		<animation name="moveGasLever">
+            <part node="gasLever" startTime="0.0" endTime="1.0" startTrans="-0.429 2.071 -0.594" endTrans="-0.441 2.071 -0.53"/>
+        </animation>
+		<animation name="loadingBarTemperature">
             <part node="tempLoadingBar" startTime="0.0" endTime="1.0" startScale="0 1 1" endScale="1 1 1"/>
         </animation>
 		<animation name="loadingBarFuel">
@@ -1017,6 +1041,8 @@
 		<i3dMapping id="starfireDisplay" node="0>0|12|1|3|3|0|1|0" />
 		<i3dMapping id="starfireDisplayLicht" node="0>0|12|1|3|3|0|1|0|0" />
 		<i3dMapping id="starfireLoadScreen" node="0>0|12|1|3|3|0|1|3" />
+		<i3dMapping id="gasLever" node="0>0|12|0|6" />
+		<i3dMapping id="gearLever" node="0>0|12|0|7" />
 		
 		<!-- LS19 Player Zeugs -->
 		<!-- Gerade kein Bock ... kommt später
