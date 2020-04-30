@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <modDesc descVersion="42">
     <author>IPF/Virtual Agriculture Modding,STv-Modding,LS-Farmers</author>
-    <version>1.1.0.0.12</version>
+    <version>1.1.0.0.13</version>
     <title>
         <en>John Deere 7010 Pack</en>
     </title>
@@ -32,11 +32,11 @@
 	
 	<inputBinding>
 		<actionBinding action="TP_TOGGLE_PRESSURE">
-            <binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_p"/>
+            <binding device="KB_MOUSE_DEFAULT" input=""/>
 		</actionBinding>
 		<actionBinding action="TP_AXIS_PRESSURE">
-			<binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_pageup" axisComponent="+"/>
-			<binding device="KB_MOUSE_DEFAULT" input="KEY_lctrl KEY_pagedown" axisComponent="-"/>
+			<binding device="KB_MOUSE_DEFAULT" input="" axisComponent="+"/>
+			<binding device="KB_MOUSE_DEFAULT" input="" axisComponent="-"/>
 		</actionBinding>
     </inputBinding>
 	

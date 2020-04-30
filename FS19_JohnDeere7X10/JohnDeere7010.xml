@@ -238,7 +238,7 @@
     </designConfigurations>
 
 	<realManualTransmissionConfigurations>
-		<realManualTransmissionConfiguration name="JD7x10 20/7 PwrShift 50" price="1500" >
+		<realManualTransmissionConfiguration name="JD7x10 19/7 PwrShift 50" price="5000" >
 			<realManualTransmission>
 				<gears defaultGear="13" powerShift="true">
 					<gear speed="16.33"	name="R7" isReverse="true" />
@@ -263,12 +263,52 @@
 					<gear speed="11.73" name="13"	/>
 					<gear speed="13.32" name="14"	/>
 					<gear speed="15.34" name="15"	/>
-					<gear speed="17.18" name="16"	/>
-					<gear speed="21.28" name="17"	/>
-					<gear speed="29.70" name="18"	/>
-					<gear speed="36.75" name="19"	/>
-					<gear speed="50.00" name="20"	/>		
+					<gear speed="23.18" name="16"	/>
+					<gear speed="31.28" name="17"	/>
+					<gear speed="39.70" name="18"	/>
+					<gear speed="50.00" name="19"	/>
 				</gears>
+				<reverser type="normal" > 
+					<ratios forward="1" reverse="1" />
+					<settings brakeAggressionBias="0.5" clutchTime="0" />
+				</reverser>	
+			</realManualTransmission>
+		</realManualTransmissionConfiguration>
+		<realManualTransmissionConfiguration name="JD7x10 16V/16R PwrQuad 30" price="0" >
+			<realManualTransmission>
+				<gears defaultGear="1" powerShift="true">
+					<gear speed="16.87"  name="1"	/>
+					<gear speed="20.31"  name="2"	/>
+					<gear speed="24.33"  name="3"	/>
+					<gear speed="29.80"  name="4"	/>
+				</gears>
+			    <rangeSet1 defaultRange="3" powerShift="false" >
+					<range ratio="0.175" name="A" />
+					<range ratio="0.371" name="B" />
+					<range ratio="0.482" name="C" />
+					<range ratio="1.000" name="D" />
+				</rangeSet1>
+				<reverser type="normal" > 
+					<ratios forward="1" reverse="1" />
+					<settings brakeAggressionBias="0.5" clutchTime="0" />
+				</reverser>	
+			</realManualTransmission>
+		</realManualTransmissionConfiguration>
+		<realManualTransmissionConfiguration name="JD7x10 20V/20R PwrQuad 40" price="2500" >
+			<realManualTransmission>
+				<gears defaultGear="1" powerShift="true">
+					<gear speed="22.31"  name="1"	/>
+					<gear speed="26.87"  name="2"	/>
+					<gear speed="32.18"  name="3"	/>
+					<gear speed="39.42"  name="4"	/>
+				</gears>
+			    <rangeSet1 defaultRange="4" powerShift="false" >
+					<range ratio="0.108" name="A" />
+					<range ratio="0.229" name="B" />
+					<range ratio="0.365" name="C" />
+					<range ratio="0.675" name="D" />
+					<range ratio="1.000" name="E" />
+				</rangeSet1>
 				<reverser type="normal" > 
 					<ratios forward="1" reverse="1" />
 					<settings brakeAggressionBias="0.5" clutchTime="0" />
@@ -454,7 +494,8 @@
             <state node="playerRightHandTargetFrontloader" referenceNode="frontloaderJoystick"/>
         </characterTargetNodeModifier>
 
-        <characterTargetNodeModifier node="playerRightFootTarget" transitionTime="0.1" >
+        <!--
+		<characterTargetNodeModifier node="playerRightFootTarget" transitionTime="0.1" >
             <state node="playerRightFootTargetGas"   referenceNode="gasPedal" directionReferenceNode="playerRightFootTargetGasRef" />
             <state node="playerRightFootTargetBrake" referenceNode="brakePedal" />
         </characterTargetNodeModifier> -->
